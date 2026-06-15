@@ -11,8 +11,8 @@ import {
   updateEmail as fbUpdateEmail,
 } from "firebase/auth";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-import { auth, db, googleProvider, isFirebaseConfigured } from "@/services/firebase";
-import { formatDisplayName } from "@/lib/utils";
+import { auth, db, googleProvider, isFirebaseConfigured } from "@/config/firebase";
+import { formatDisplayName } from "@/utils";
 
 export const AuthContext = createContext(undefined);
 

@@ -10,8 +10,8 @@ import {
   DollarSign,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
-import { STATUS_CONFIG, PRIORITY_CONFIG } from "@/lib/constants";
-import { cn, formatRelative, getInitials, gradientFor } from "@/lib/utils";
+import { STATUS_CONFIG, PRIORITY_CONFIG } from "@/constants";
+import { cn, formatRelative, getInitials, gradientFor } from "@/utils";
 
 function CompanyAvatar({ company }) {
   const label = company == null ? "" : String(company);

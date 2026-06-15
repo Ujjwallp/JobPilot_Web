@@ -1,5 +1,5 @@
 import { forwardRef, useId } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 
 export const Input = forwardRef(function Input(
   { label, error, hint, icon: Icon, className, id, ...props },

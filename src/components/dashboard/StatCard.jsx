@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/Card";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 
 const ACCENTS = {
   indigo: "bg-indigo-50 text-indigo-600 dark:bg-indigo-500/10 dark:text-indigo-400",

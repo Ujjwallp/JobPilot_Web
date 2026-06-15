@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, ArrowLeft, MailCheck } from "lucide-react";
-import { AuthShell } from "@/components/auth/AuthShell";
+import { AuthShell } from "@/components/layout/AuthShell";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/useToast";
-import { isEmail } from "@/lib/validation";
-import { authErrorMessage } from "@/lib/constants";
+import { isEmail } from "@/utils/validation";
+import { authErrorMessage } from "@/constants";
 
 export function ForgotPassword() {
   const { resetPassword } = useAuth();

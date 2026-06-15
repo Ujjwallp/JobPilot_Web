@@ -17,9 +17,9 @@ import { useTheme } from "@/hooks/useTheme";
 import { useAuth } from "@/hooks/useAuth";
 import { useJobs } from "@/hooks/useJobs";
 import { useToast } from "@/hooks/useToast";
-import { isEmail } from "@/lib/validation";
-import { authErrorMessage } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { isEmail } from "@/utils/validation";
+import { authErrorMessage } from "@/constants";
+import { cn } from "@/utils";
 
 export function Settings() {
   const { theme, setTheme } = useTheme();

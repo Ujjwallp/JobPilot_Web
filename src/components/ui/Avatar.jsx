@@ -1,4 +1,4 @@
-import { cn, getInitials, gradientFor } from "@/lib/utils";
+import { cn, getInitials, gradientFor } from "@/utils";
 
 const SIZES = {
   xs: "h-6 w-6 text-[10px]",

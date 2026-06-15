@@ -16,8 +16,8 @@ import {
   JOB_TYPES,
   PRIORITY_ORDER,
   SORT_OPTIONS,
-} from "@/lib/constants";
-import { pluralize } from "@/lib/utils";
+} from "@/constants";
+import { pluralize } from "@/utils";
 
 const PRIORITY_RANK = { High: 0, Medium: 1, Low: 2 };
 

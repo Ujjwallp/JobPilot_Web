@@ -5,8 +5,8 @@ import { JobModal } from "@/components/jobs/JobModal";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useJobs } from "@/hooks/useJobs";
 import { useJobModals } from "@/hooks/useJobModals";
-import { STATUS_ORDER, STATUS_CONFIG } from "@/lib/constants";
-import { cn } from "@/lib/utils";
+import { STATUS_ORDER, STATUS_CONFIG } from "@/constants";
+import { cn } from "@/utils";
 
 export function Kanban() {
   const { jobs, loading, updateJob } = useJobs();

@@ -12,15 +12,15 @@ import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
-import { validateJob } from "@/lib/validation";
+import { validateJob } from "@/utils/validation";
 import {
   STATUS_ORDER,
   STATUS_CONFIG,
   JOB_TYPES,
   WORK_MODES,
   PRIORITY_ORDER,
-} from "@/lib/constants";
-import { todayInput, toInputDate } from "@/lib/utils";
+} from "@/constants";
+import { todayInput, toInputDate } from "@/utils";
 
 const EMPTY = {
   company: "",

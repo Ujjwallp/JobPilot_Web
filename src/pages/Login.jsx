@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail, Lock, ArrowRight } from "lucide-react";
-import { AuthShell, AuthDivider } from "@/components/auth/AuthShell";
-import { GoogleButton } from "@/components/auth/GoogleButton";
+import { AuthShell, AuthDivider } from "@/components/layout/AuthShell";
+import { GoogleButton } from "@/components/ui/GoogleButton";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/useToast";
-import { validateAuth } from "@/lib/validation";
-import { authErrorMessage } from "@/lib/constants";
+import { validateAuth } from "@/utils/validation";
+import { authErrorMessage } from "@/constants";
 
 export function Login() {
   const { signIn, signInWithGoogle } = useAuth();

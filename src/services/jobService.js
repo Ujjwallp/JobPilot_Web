@@ -11,7 +11,7 @@ import {
   getDocs,
   writeBatch,
 } from "firebase/firestore";
-import { db, isFirebaseConfigured } from "./firebase";
+import { db, isFirebaseConfigured } from "@/config/firebase";
 
 function toMs(value) {
   if (!value) return Date.now();

@@ -14,7 +14,7 @@ import {
   StatusDonut,
   TimelineBars,
   StatusBars,
-} from "@/components/dashboard/Charts";
+} from "@/components/ui/Charts";
 import { JobCard } from "@/components/jobs/JobCard";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";

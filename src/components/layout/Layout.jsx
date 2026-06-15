@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { SidebarContent } from "./Sidebar";
 import { Topbar } from "./Topbar";
-import { AddJobModalProvider } from "@/context/AddJobModalContext";
+import { AddJobModalProvider } from "@/contexts/AddJobModalContext";
 
 /**
  * Mobile navigation drawer.

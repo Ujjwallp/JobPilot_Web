@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { Rocket, LogOut, Cloud } from "lucide-react";
-import { NAV_ITEMS } from "@/lib/constants";
+import { NAV_ITEMS } from "@/constants";
 import { useAuth } from "@/hooks/useAuth";
 import { Avatar } from "@/components/ui/Avatar";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 
 export function Brand() {
   return (

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 
 /** Base shimmer block. Combine with width/height/radius via className. */
 export function Skeleton({ className }) {

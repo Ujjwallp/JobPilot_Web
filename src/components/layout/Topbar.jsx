@@ -9,13 +9,13 @@ import {
   Settings,
   User,
 } from "lucide-react";
-import { NAV_ITEMS } from "@/lib/constants";
+import { NAV_ITEMS } from "@/constants";
 import { useAuth } from "@/hooks/useAuth";
 import { useTheme } from "@/hooks/useTheme";
 import { useAddJobModal } from "@/hooks/useAddJobModal";
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 
 function MenuItem({ icon: Icon, children, onClick, tone }) {
   return (

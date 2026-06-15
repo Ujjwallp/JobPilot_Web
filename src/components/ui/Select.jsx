@@ -1,6 +1,6 @@
 import { forwardRef, useId } from "react";
 import { ChevronDown } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils";
 
 export const Select = forwardRef(function Select(
   { label, error, hint, className, id, children, ...props },

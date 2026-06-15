@@ -7,9 +7,9 @@ import { Avatar } from "@/components/ui/Avatar";
 import { useAuth } from "@/hooks/useAuth";
 import { useJobs } from "@/hooks/useJobs";
 import { useToast } from "@/hooks/useToast";
-import { validateProfile } from "@/lib/validation";
-import { authErrorMessage } from "@/lib/constants";
-import { formatDate } from "@/lib/utils";
+import { validateProfile } from "@/utils/validation";
+import { authErrorMessage } from "@/constants";
+import { formatDate } from "@/utils";
 
 export function Profile() {
   const { currentUser, updateUserProfile } = useAuth();

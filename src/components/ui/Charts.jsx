@@ -1,4 +1,4 @@
-import { STATUS_ORDER, STATUS_CONFIG } from "@/lib/constants";
+import { STATUS_ORDER, STATUS_CONFIG } from "@/constants";
 
 /** SVG donut chart of application status distribution + legend. */
 export function StatusDonut({ counts, total }) {

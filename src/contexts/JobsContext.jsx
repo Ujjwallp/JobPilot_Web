@@ -9,7 +9,7 @@ import {
 import { jobService } from "@/services/jobService";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/useToast";
-import { lastMonths } from "@/lib/utils";
+import { lastMonths } from "@/utils";
 
 export const JobsContext = createContext(undefined);
 
