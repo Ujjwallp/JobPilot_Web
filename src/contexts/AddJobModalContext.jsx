@@ -1,5 +1,5 @@
 import { createContext, useCallback, useMemo, useState } from "react";
-import { JobModal } from "@/components/jobs/JobModal";
+import { JobModal } from "@/features/jobs/components/JobModal";
 
 export const AddJobModalContext = createContext(undefined);
 

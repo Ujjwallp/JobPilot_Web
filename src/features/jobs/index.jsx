@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Search, Plus, Briefcase, X, Sparkles } from "lucide-react";
-import { JobCard } from "@/components/jobs/JobCard";
+import { JobCard } from "@/features/jobs/components/JobCard";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";

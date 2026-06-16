@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { JobModal } from "@/components/jobs/JobModal";
+import { JobModal } from "@/features/jobs/components/JobModal";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { useJobs } from "@/hooks/useJobs";
 

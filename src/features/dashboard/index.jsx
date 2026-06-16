@@ -9,13 +9,13 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Card, CardBody, CardHeader, CardTitle } from "@/components/ui/Card";
-import { StatCard } from "@/components/dashboard/StatCard";
+import { StatCard } from "@/features/dashboard/components/StatCard";
 import {
   StatusDonut,
   TimelineBars,
   StatusBars,
 } from "@/components/ui/Charts";
-import { JobCard } from "@/components/jobs/JobCard";
+import { JobCard } from "@/features/jobs/components/JobCard";
 import { Button } from "@/components/ui/Button";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { StatCardSkeleton, Skeleton } from "@/components/ui/Skeleton";

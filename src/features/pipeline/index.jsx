@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { JobCard } from "@/components/jobs/JobCard";
-import { JobModal } from "@/components/jobs/JobModal";
+import { JobCard } from "@/features/jobs/components/JobCard";
+import { JobModal } from "@/features/jobs/components/JobModal";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { useJobs } from "@/hooks/useJobs";
 import { useJobModals } from "@/hooks/useJobModals";

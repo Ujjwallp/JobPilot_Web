@@ -3,18 +3,18 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import { ToastProvider } from "@/contexts/ToastContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { JobsProvider } from "@/contexts/JobsContext";
-import { ProtectedRoute, PublicRoute } from "@/components/layout/ProtectedRoute";
-import { Layout } from "@/components/layout/Layout";
-import { Landing } from "@/pages/Landing";
-import { Login } from "@/pages/Login";
-import { Signup } from "@/pages/Signup";
-import { ForgotPassword } from "@/pages/ForgotPassword";
-import { Dashboard } from "@/pages/Dashboard";
-import { Jobs } from "@/pages/Jobs";
-import { Kanban } from "@/pages/Kanban";
-import { Profile } from "@/pages/Profile";
-import { Settings } from "@/pages/Settings";
-import { NotFound } from "@/pages/NotFound";
+import { ProtectedRoute, PublicRoute } from "@/features/layout/ProtectedRoute";
+import { Layout } from "@/features/layout";
+import { Landing } from "@/features/landing";
+import { Login } from "@/features/auth/login";
+import { Signup } from "@/features/auth/signup";
+import { ForgotPassword } from "@/features/auth/forgot-password";
+import { Dashboard } from "@/features/dashboard";
+import { Jobs } from "@/features/jobs";
+import { Kanban } from "@/features/pipeline";
+import { Profile } from "@/features/profile";
+import { Settings } from "@/features/settings";
+import { NotFound } from "@/features/not-found";
 
 export default function App() {
   return (
