@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Mail, Lock, ArrowRight } from "lucide-react";
-import { AuthShell, AuthDivider } from "@/features/layout/AuthShell";
+import { AuthShell, AuthDivider } from "@/layouts/AuthShell";
 import { GoogleButton } from "@/components/ui/GoogleButton";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";

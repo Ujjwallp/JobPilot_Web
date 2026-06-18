@@ -93,7 +93,6 @@ export function Jobs() {
         </Button>
       </div>
 
-      {/* Toolbar */}
       <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
@@ -173,7 +172,6 @@ export function Jobs() {
         </div>
       </div>
 
-      {/* Results */}
       {loading ? (
         <div className="space-y-3">
           {Array.from({ length: 6 }).map((_, i) => (

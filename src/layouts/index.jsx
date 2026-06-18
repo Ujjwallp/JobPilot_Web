@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { SidebarContent } from "./Sidebar";
 import { Topbar } from "./Topbar";
-import { AddJobModalProvider } from "@/contexts/AddJobModalContext";
+import { AddJobModalProvider } from "@/context/AddJobModalContext";
 
 /**
  * Mobile navigation drawer.
@@ -38,7 +38,6 @@ export function Layout() {
   return (
     <AddJobModalProvider>
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-        {/* Desktop sidebar */}
         <aside className="fixed inset-y-0 left-0 z-40 hidden w-64 border-r border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900 lg:block">
           <SidebarContent />
         </aside>

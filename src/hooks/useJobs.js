@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { JobsContext } from "@/contexts/JobsContext";
+import { JobsContext } from "@/context/JobsContext";
 
 export function useJobs() {
   const ctx = useContext(JobsContext);

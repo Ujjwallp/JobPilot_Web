@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { AddJobModalContext } from "@/contexts/AddJobModalContext";
+import { AddJobModalContext } from "@/context/AddJobModalContext";
 
 /**
  * Access the global "Add application" modal.

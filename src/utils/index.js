@@ -120,21 +120,6 @@ export function gradientFor(seed) {
   return GRADIENTS[Math.abs(hash) % GRADIENTS.length];
 }
 
-export function debounce(fn, delay = 300) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
-  };
-}
-
-export function groupBy(arr, keyFn) {
-  return arr.reduce((acc, item) => {
-    const key = keyFn(item);
-    (acc[key] = acc[key] || []).push(item);
-    return acc;
-  }, {});
-}
 
 /** Build an array of the last `count` month buckets ending this month. */
 export function lastMonths(count = 6) {

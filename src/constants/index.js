@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 
 /** Canonical application statuses. */
-export const STATUS = Object.freeze({
+const STATUS = Object.freeze({
   APPLIED: "applied",
   INTERVIEW: "interview",
   OFFER: "offer",
@@ -111,7 +111,7 @@ export const NAV_ITEMS = [
 ];
 
 /** Friendly messages for Firebase auth error codes. */
-export const AUTH_ERROR_MESSAGES = {
+const AUTH_ERROR_MESSAGES = {
   "auth/email-already-in-use": "An account with this email already exists.",
   "auth/invalid-credential": "Invalid email or password.",
   "auth/wrong-password": "Invalid email or password.",

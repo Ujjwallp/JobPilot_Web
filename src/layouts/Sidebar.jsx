@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { Avatar } from "@/components/ui/Avatar";
 import { cn } from "@/utils";
 
-export function Brand() {
+function Brand() {
   return (
     <div className="flex items-center gap-2.5">
       <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/30">

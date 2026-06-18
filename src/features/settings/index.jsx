@@ -96,7 +96,6 @@ export function Settings() {
         </p>
       </div>
 
-      {/* Storage mode */}
       <Card>
         <CardBody className="flex items-center gap-3">
           <Cloud className="h-5 w-5 shrink-0 text-emerald-500" />
@@ -111,7 +110,6 @@ export function Settings() {
         </CardBody>
       </Card>
 
-      {/* Appearance */}
       <Card>
         <CardHeader>
           <CardTitle>Appearance</CardTitle>
@@ -141,7 +139,6 @@ export function Settings() {
         </CardBody>
       </Card>
 
-      {/* Account */}
       {isPasswordUser ? (
         <Card>
           <CardHeader>
@@ -200,7 +197,6 @@ export function Settings() {
         </Card>
       )}
 
-      {/* Data */}
       <Card>
         <CardHeader>
           <CardTitle>Data</CardTitle>
@@ -223,7 +219,6 @@ export function Settings() {
         </CardBody>
       </Card>
 
-      {/* Sign out */}
       <Card>
         <CardBody className="flex items-center justify-between gap-3">
           <div>

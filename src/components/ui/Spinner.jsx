@@ -1,7 +1,7 @@
 import { Loader2 } from "lucide-react";
 import { cn } from "@/utils";
 
-export function Spinner({ className, size = 24 }) {
+function Spinner({ className, size = 24 }) {
   return (
     <Loader2
       className={cn("animate-spin text-indigo-500", className)}

@@ -19,7 +19,6 @@ export function AuthDivider({ children = "or" }) {
 export function AuthShell({ title, subtitle, children, footer }) {
   return (
     <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950">
-      {/* Brand / info panel */}
       <div className="relative hidden w-1/2 flex-col justify-between overflow-hidden bg-gradient-to-br from-indigo-600 via-violet-600 to-fuchsia-600 p-12 lg:flex">
         <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-fuchsia-400/20 blur-3xl" />
@@ -50,7 +49,6 @@ export function AuthShell({ title, subtitle, children, footer }) {
         </p>
       </div>
 
-      {/* Form panel */}
       <div className="flex w-full flex-col justify-center px-5 py-10 sm:px-8 lg:w-1/2">
         <div className="mx-auto w-full max-w-sm">
           <Link to="/" className="mb-8 flex items-center gap-2.5 lg:hidden">

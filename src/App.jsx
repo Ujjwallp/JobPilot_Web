@@ -1,10 +1,10 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import { ToastProvider } from "@/contexts/ToastContext";
-import { AuthProvider } from "@/contexts/AuthContext";
-import { JobsProvider } from "@/contexts/JobsContext";
-import { ProtectedRoute, PublicRoute } from "@/features/layout/ProtectedRoute";
-import { Layout } from "@/features/layout";
+import { ThemeProvider } from "@/context/ThemeContext";
+import { ToastProvider } from "@/context/ToastContext";
+import { AuthProvider } from "@/context/AuthContext";
+import { JobsProvider } from "@/context/JobsContext";
+import { ProtectedRoute, PublicRoute } from "@/layouts/ProtectedRoute";
+import { Layout } from "@/layouts";
 import { Landing } from "@/features/landing";
 import { Login } from "@/features/auth/login";
 import { Signup } from "@/features/auth/signup";
@@ -23,7 +23,6 @@ export default function App() {
         <AuthProvider>
           <HashRouter>
             <Routes>
-              {/* Public */}
               <Route path="/" element={<Landing />} />
               <Route
                 path="/login"
@@ -50,7 +49,6 @@ export default function App() {
                 }
               />
 
-              {/* Protected (wrapped in JobsProvider + Layout) */}
               <Route
                 element={
                   <ProtectedRoute>
