@@ -6,7 +6,6 @@ import {
   Settings,
 } from "lucide-react";
 
-/** Canonical application statuses. */
 const STATUS = Object.freeze({
   APPLIED: "applied",
   INTERVIEW: "interview",
@@ -14,7 +13,6 @@ const STATUS = Object.freeze({
   REJECTED: "rejected",
 });
 
-/** Pipeline order used across the pipeline view and stats. */
 export const STATUS_ORDER = ["applied", "interview", "offer", "rejected"];
 
 /**
@@ -110,7 +108,6 @@ export const NAV_ITEMS = [
   { to: "/settings", label: "Settings", icon: Settings },
 ];
 
-/** Friendly messages for Firebase auth error codes. */
 const AUTH_ERROR_MESSAGES = {
   "auth/email-already-in-use": "An account with this email already exists.",
   "auth/invalid-credential": "Invalid email or password.",

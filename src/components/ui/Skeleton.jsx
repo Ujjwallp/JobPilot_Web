@@ -1,11 +1,9 @@
 import { cn } from "@/utils";
 
-/** Base shimmer block. Combine with width/height/radius via className. */
 export function Skeleton({ className }) {
   return <div className={cn("skeleton", className)} />;
 }
 
-/** Reusable skeleton for a job list row. */
 export function JobRowSkeleton() {
   return (
     <div className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
@@ -19,7 +17,6 @@ export function JobRowSkeleton() {
   );
 }
 
-/** Skeleton grid for the dashboard stat cards. */
 export function StatCardSkeleton() {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">

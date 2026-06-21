@@ -1,12 +1,10 @@
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-/** Merge Tailwind classes intelligently (clsx + tailwind-merge). */
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
 
-/** Coerce many date-like values (ISO string, Firestore Timestamp, ms) into a Date. */
 function toDate(value) {
   if (!value) return null;
   if (value instanceof Date) return value;
@@ -29,7 +27,6 @@ export function formatDate(value, options) {
   });
 }
 
-/** Human friendly relative date: Today / Yesterday / 3 days ago / fallback. */
 export function formatRelative(value) {
   const d = toDate(value);
   if (!d) return "—";
@@ -45,7 +42,6 @@ export function formatRelative(value) {
   return formatDate(value);
 }
 
-/** Format a date for an <input type="date"> value (yyyy-mm-dd). */
 export function toInputDate(value) {
   const d = toDate(value);
   if (!d) return "";
@@ -110,7 +106,6 @@ const GRADIENTS = [
   "from-cyan-500 to-sky-600",
 ];
 
-/** Deterministic gradient class from a seed string (e.g. company/user id). */
 export function gradientFor(seed) {
   const value = seed == null ? "" : String(seed);
   let hash = 0;
@@ -120,8 +115,6 @@ export function gradientFor(seed) {
   return GRADIENTS[Math.abs(hash) % GRADIENTS.length];
 }
 
-
-/** Build an array of the last `count` month buckets ending this month. */
 export function lastMonths(count = 6) {
   const months = [];
   const now = new Date();

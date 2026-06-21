@@ -2,7 +2,6 @@ import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { FullPageSpinner } from "@/components/ui/Spinner";
 
-/** Guards private routes — redirects to /login when there is no session. */
 export function ProtectedRoute({ children }) {
   const { currentUser, loading } = useAuth();
   const location = useLocation();
@@ -13,7 +12,6 @@ export function ProtectedRoute({ children }) {
   return children;
 }
 
-/** Keeps auth visitors out of the auth pages. */
 export function PublicRoute({ children }) {
   const { currentUser, loading } = useAuth();
   if (loading) return <FullPageSpinner label="Loading…" />;

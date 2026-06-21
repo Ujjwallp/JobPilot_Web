@@ -1,6 +1,5 @@
 import { STATUS_ORDER, STATUS_CONFIG } from "@/constants";
 
-/** SVG donut chart of application status distribution + legend. */
 export function StatusDonut({ counts, total }) {
   const size = 180;
   const stroke = 20;
@@ -75,7 +74,6 @@ export function StatusDonut({ counts, total }) {
   );
 }
 
-/** CSS bar chart of applications per month (last 6 months). */
 export function TimelineBars({ data }) {
   const max = Math.max(1, ...data.map((d) => d.value));
   return (
@@ -109,7 +107,6 @@ export function TimelineBars({ data }) {
   );
 }
 
-/** Horizontal animated progress bars for each status. */
 export function StatusBars({ counts, total }) {
   const data = STATUS_ORDER.map((s) => ({
     key: s,

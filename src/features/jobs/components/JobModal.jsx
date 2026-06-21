@@ -3,7 +3,6 @@ import { JobForm } from "./JobForm";
 import { useJobs } from "@/hooks/useJobs";
 import { useToast } from "@/hooks/useToast";
 
-/** Add/Edit modal wrapping <JobForm>, wired straight to the jobs store. */
 export function JobModal({ open, mode = "add", initialValues, onClose }) {
   const { addJob, updateJob, actionLoading } = useJobs();
   const toast = useToast();
