@@ -2,9 +2,6 @@ import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-/**
- * Firebase is configured from Vite environment variables.
- */
 const firebaseConfig = {
   apiKey: String(import.meta.env.VITE_FIREBASE_API_KEY || "").trim(),
   authDomain: String(import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "").trim(),

@@ -3,10 +3,6 @@ import { JobModal } from "@/features/jobs/components/JobModal";
 import { ConfirmDialog } from "@/components/ui/ConfirmDialog";
 import { useJobs } from "@/hooks/useJobs";
 
-/**
- * Shared edit + delete modals for JobCards used across Dashboard, Jobs and
- * Kanban. Returns action handlers plus the rendered modal elements.
- */
 export function useJobModals() {
   const { deleteJob, actionLoading } = useJobs();
   const [editing, setEditing] = useState(null);

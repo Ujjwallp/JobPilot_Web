@@ -1,4 +1,4 @@
-import { createContext, useCallback, useEffect, useMemo, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -38,9 +38,6 @@ async function ensureUserDocument(user) {
   };
 }
 
-/**
- * Unified auth surface using Firebase Authentication.
- */
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -63,7 +60,7 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
-  const signUp = useCallback(async (email, password, displayName) => {
+  const signUp = async (email, password, displayName) => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
@@ -73,9 +70,9 @@ export function AuthProvider({ children }) {
     const normalizedUser = await ensureUserDocument({ ...cred.user, displayName: friendlyName });
     setCurrentUser(normalizedUser);
     return cred.user;
-  }, []);
+  };
 
-  const signIn = useCallback(async (email, password) => {
+  const signIn = async (email, password) => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
@@ -83,9 +80,9 @@ export function AuthProvider({ children }) {
     const normalizedUser = await ensureUserDocument(cred.user);
     setCurrentUser(normalizedUser);
     return cred;
-  }, []);
+  };
 
-  const signInWithGoogle = useCallback(async () => {
+  const signInWithGoogle = async () => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
@@ -98,23 +95,23 @@ export function AuthProvider({ children }) {
     const normalizedUser = await ensureUserDocument({ ...user, displayName: friendlyName });
     setCurrentUser(normalizedUser);
     return cred;
-  }, []);
+  };
 
-  const resetPassword = useCallback(async (email) => {
+  const resetPassword = async (email) => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
     return sendPasswordResetEmail(auth, email);
-  }, []);
+  };
 
-  const logOut = useCallback(async () => {
+  const logOut = async () => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
     return signOut(auth);
-  }, []);
+  };
 
-  const updateUserProfile = useCallback(async ({ displayName, photoURL }) => {
+  const updateUserProfile = async ({ displayName, photoURL }) => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
@@ -131,9 +128,9 @@ export function AuthProvider({ children }) {
       { merge: true }
     );
     setCurrentUser((prev) => (prev ? { ...prev, ...updates } : prev));
-  }, []);
+  };
 
-  const updateUserEmail = useCallback(async (newEmail) => {
+  const updateUserEmail = async (newEmail) => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
@@ -147,41 +144,27 @@ export function AuthProvider({ children }) {
       { merge: true }
     );
     setCurrentUser((prev) => (prev ? { ...prev, email: newEmail } : prev));
-  }, []);
+  };
 
-  const updateUserPassword = useCallback(async (newPassword) => {
+  const updateUserPassword = async (newPassword) => {
     if (!isFirebaseConfigured) {
       throw new Error("Firebase is not configured.");
     }
     return fbUpdatePassword(auth.currentUser, newPassword);
-  }, []);
+  };
 
-  const value = useMemo(
-    () => ({
-      currentUser,
-      loading,
-      signUp,
-      signIn,
-      signInWithGoogle,
-      resetPassword,
-      logOut,
-      updateUserProfile,
-      updateUserEmail,
-      updateUserPassword,
-    }),
-    [
-      currentUser,
-      loading,
-      signUp,
-      signIn,
-      signInWithGoogle,
-      resetPassword,
-      logOut,
-      updateUserProfile,
-      updateUserEmail,
-      updateUserPassword,
-    ]
-  );
+  const value = {
+    currentUser,
+    loading,
+    signUp,
+    signIn,
+    signInWithGoogle,
+    resetPassword,
+    logOut,
+    updateUserProfile,
+    updateUserEmail,
+    updateUserPassword,
+  };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

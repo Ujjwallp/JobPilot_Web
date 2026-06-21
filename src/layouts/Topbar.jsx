@@ -12,7 +12,7 @@ import {
 import { NAV_ITEMS } from "@/constants";
 import { useAuth } from "@/hooks/useAuth";
 import { useTheme } from "@/hooks/useTheme";
-import { useAddJobModal } from "@/hooks/useAddJobModal";
+import { useJobs } from "@/hooks/useJobs";
 import { Avatar } from "@/components/ui/Avatar";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/utils";
@@ -40,7 +40,7 @@ export function Topbar({ onMenuClick }) {
   const navigate = useNavigate();
   const { currentUser, logOut } = useAuth();
   const { theme, toggleTheme } = useTheme();
-  const { openAddJobModal } = useAddJobModal();
+  const { openAddJobModal } = useJobs();
   const [menuOpen, setMenuOpen] = useState(false);
   const ref = useRef(null);
 

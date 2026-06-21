@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import {
-  Rocket,
+  Briefcase,
   Moon,
   Sun,
   KanbanSquare,
@@ -81,9 +81,9 @@ export function Landing() {
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
       <header className="sticky top-0 z-30 border-b border-slate-200/70 bg-white/70 backdrop-blur-xl dark:border-slate-800/70 dark:bg-slate-950/70">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-          <Link to="/" className="flex items-center gap-2.5">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/30">
-              <Rocket className="h-5 w-5" />
+          <Link to="/" className="flex items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center overflow-hidden">
+              <img src="/favicon.png" alt="JobPilot" className="h-full w-full object-contain" />
             </div>
             <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
               JobPilot

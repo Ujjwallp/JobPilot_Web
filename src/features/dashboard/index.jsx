@@ -22,12 +22,11 @@ import { StatCardSkeleton, Skeleton } from "@/components/ui/Skeleton";
 import { useJobs } from "@/hooks/useJobs";
 import { useAuth } from "@/hooks/useAuth";
 import { useJobModals } from "@/hooks/useJobModals";
-import { useAddJobModal } from "@/hooks/useAddJobModal";
+
 
 export function Dashboard() {
   const { currentUser } = useAuth();
-  const { jobs, loading, stats } = useJobs();
-  const { openAddJobModal: openAdd } = useAddJobModal();
+  const { jobs, loading, stats, openAddJobModal: openAdd } = useJobs();
   const { handleEdit, handleDelete, modals } = useJobModals();
 
   const firstName = (

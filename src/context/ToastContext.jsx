@@ -1,16 +1,5 @@
-import {
-  createContext,
-  useCallback,
-  useMemo,
-  useState,
-} from "react";
-import {
-  CheckCircle2,
-  AlertCircle,
-  Info,
-  AlertTriangle,
-  X,
-} from "lucide-react";
+import { createContext, useState } from "react";
+import { CheckCircle2, AlertCircle, Info, AlertTriangle, X } from "lucide-react";
 import { cn } from "@/utils";
 
 export const ToastContext = createContext(undefined);
@@ -39,30 +28,24 @@ const ACCENTS = {
 export function ToastProvider({ children }) {
   const [toasts, setToasts] = useState([]);
 
-  const remove = useCallback((id) => {
+  const remove = (id) => {
     setToasts((current) => current.filter((t) => t.id !== id));
-  }, []);
+  };
 
-  const push = useCallback(
-    (message, type = "info", duration = 4000) => {
-      const id = Math.random().toString(36).slice(2);
-      setToasts((current) => [...current, { id, message, type }]);
-      if (duration) window.setTimeout(() => remove(id), duration);
-      return id;
-    },
-    [remove]
-  );
+  const push = (message, type = "info", duration = 4000) => {
+    const id = Math.random().toString(36).slice(2);
+    setToasts((current) => [...current, { id, message, type }]);
+    if (duration) window.setTimeout(() => remove(id), duration);
+    return id;
+  };
 
-  const toast = useMemo(
-    () => ({
-      push,
-      success: (m, d) => push(m, "success", d),
-      error: (m, d) => push(m, "error", d ?? 5500),
-      info: (m, d) => push(m, "info", d),
-      warning: (m, d) => push(m, "warning", d),
-    }),
-    [push]
-  );
+  const toast = {
+    push,
+    success: (m, d) => push(m, "success", d),
+    error: (m, d) => push(m, "error", d ?? 5500),
+    info: (m, d) => push(m, "info", d),
+    warning: (m, d) => push(m, "warning", d),
+  };
 
   return (
     <ToastContext.Provider value={toast}>

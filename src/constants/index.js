@@ -15,10 +15,6 @@ const STATUS = Object.freeze({
 
 export const STATUS_ORDER = ["applied", "interview", "offer", "rejected"];
 
-/**
- * Full Tailwind class strings per status (kept static so the JIT compiler
- * doesn't purge them). Each entry also exposes a hex color for SVG charts.
- */
 export const STATUS_CONFIG = {
   applied: {
     value: "applied",

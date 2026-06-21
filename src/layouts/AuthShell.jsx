@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Rocket, CheckCircle2 } from "lucide-react";
+import { Briefcase, CheckCircle2 } from "lucide-react";
 const HIGHLIGHTS = [
   "Track every application in one organized board",
   "Get a clear view of interviews, offers & rejections",
@@ -23,9 +23,9 @@ export function AuthShell({ title, subtitle, children, footer }) {
         <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-fuchsia-400/20 blur-3xl" />
 
-        <Link to="/" className="relative flex items-center gap-2.5 text-white">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 backdrop-blur">
-            <Rocket className="h-5 w-5" />
+        <Link to="/" className="relative flex items-center gap-3 text-white">
+          <div className="flex h-11 w-11 items-center justify-center overflow-hidden">
+            <img src="/favicon.png" alt="JobPilot" className="h-full w-full object-contain" />
           </div>
           <span className="text-lg font-bold tracking-tight">JobPilot</span>
         </Link>
@@ -52,8 +52,8 @@ export function AuthShell({ title, subtitle, children, footer }) {
       <div className="flex w-full flex-col justify-center px-5 py-10 sm:px-8 lg:w-1/2">
         <div className="mx-auto w-full max-w-sm">
           <Link to="/" className="mb-8 flex items-center gap-2.5 lg:hidden">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/30">
-              <Rocket className="h-5 w-5" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg shadow-blue-500/30">
+              <Briefcase className="h-5 w-5" />
             </div>
             <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white">
               JobPilot

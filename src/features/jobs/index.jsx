@@ -8,7 +8,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { JobRowSkeleton } from "@/components/ui/Skeleton";
 import { useJobs } from "@/hooks/useJobs";
 import { useJobModals } from "@/hooks/useJobModals";
-import { useAddJobModal } from "@/hooks/useAddJobModal";
+
 import { useDebounce } from "@/hooks/useDebounce";
 import {
   STATUS_ORDER,
@@ -22,8 +22,7 @@ import { pluralize } from "@/utils";
 const PRIORITY_RANK = { High: 0, Medium: 1, Low: 2 };
 
 export function Jobs() {
-  const { jobs, loading } = useJobs();
-  const { openAddJobModal: openAdd } = useAddJobModal();
+  const { jobs, loading, openAddJobModal: openAdd } = useJobs();
   const { handleEdit, handleDelete, modals } = useJobModals();
 
   const [query, setQuery] = useState("");
@@ -33,39 +32,37 @@ export function Jobs() {
   const [sort, setSort] = useState("newest");
   const debounced = useDebounce(query, 250);
 
-  const filtered = useMemo(() => {
-    const q = debounced.trim().toLowerCase();
-    const list = jobs.filter((j) => {
-      const haystack = `${j.company} ${j.position} ${j.location || ""}`.toLowerCase();
-      return (
-        (!q || haystack.includes(q)) &&
-        (status === "all" || j.status === status) &&
-        (type === "all" || j.jobType === type) &&
-        (priority === "all" || j.priority === priority)
-      );
-    });
+  const q = debounced.trim().toLowerCase();
+  const list = jobs.filter((j) => {
+    const haystack = `${j.company} ${j.position} ${j.location || ""}`.toLowerCase();
+    return (
+      (!q || haystack.includes(q)) &&
+      (status === "all" || j.status === status) &&
+      (type === "all" || j.jobType === type) &&
+      (priority === "all" || j.priority === priority)
+    );
+  });
 
-    return list.sort((a, b) => {
-      switch (sort) {
-        case "oldest":
-          return (a.createdAt || 0) - (b.createdAt || 0);
-        case "company":
-          return a.company.localeCompare(b.company);
-        case "position":
-          return a.position.localeCompare(b.position);
-        case "status":
-          return (
-            STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status)
-          );
-        case "priority":
-          return (
-            (PRIORITY_RANK[a.priority] ?? 1) - (PRIORITY_RANK[b.priority] ?? 1)
-          );
-        default:
-          return (b.createdAt || 0) - (a.createdAt || 0);
-      }
-    });
-  }, [jobs, debounced, status, type, priority, sort]);
+  const filtered = list.sort((a, b) => {
+    switch (sort) {
+      case "oldest":
+        return (a.createdAt || 0) - (b.createdAt || 0);
+      case "company":
+        return a.company.localeCompare(b.company);
+      case "position":
+        return a.position.localeCompare(b.position);
+      case "status":
+        return (
+          STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status)
+        );
+      case "priority":
+        return (
+          (PRIORITY_RANK[a.priority] ?? 1) - (PRIORITY_RANK[b.priority] ?? 1)
+        );
+      default:
+        return (b.createdAt || 0) - (a.createdAt || 0);
+    }
+  });
 
   const hasFilters =
     status !== "all" || type !== "all" || priority !== "all" || debounced !== "";

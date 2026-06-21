@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { Rocket, LogOut, Cloud } from "lucide-react";
+import { Briefcase, LogOut, Cloud } from "lucide-react";
 import { NAV_ITEMS } from "@/constants";
 import { useAuth } from "@/hooks/useAuth";
 import { Avatar } from "@/components/ui/Avatar";
@@ -7,9 +7,9 @@ import { cn } from "@/utils";
 
 function Brand() {
   return (
-    <div className="flex items-center gap-2.5">
-      <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-500/30">
-        <Rocket className="h-5 w-5" />
+    <div className="flex items-center gap-3">
+      <div className="flex h-11 w-11 items-center justify-center overflow-hidden">
+        <img src="/favicon.png" alt="JobPilot" className="h-full w-full object-contain" />
       </div>
       <div className="leading-tight">
         <p className="text-base font-bold tracking-tight text-slate-900 dark:text-white">
